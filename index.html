@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+  </head>
+  <body>
+    <script type="module" src="/main.js"></script>
+    <div id="app">
+      <h1>Password Generator</h1>
+      <div class="password-copy-container">
+        <input id="password" type="text" value='P4$5W0rD!'/>
+        <div id="copy" onclick="copyPassword()">
+          <div class="copied">Copied!</div>
+          <svg
+            width="800px"
+            height="800px"
+            viewBox="0 0 16 16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13.49 3 10.74.37A1.22 1.22 0 0 0 9.86 0h-4a1.25 1.25 0 0 0-1.22 1.25v11a1.25 1.25 0 0 0 1.25 1.25h6.72a1.25 1.25 0 0 0 1.25-1.25V3.88a1.22 1.22 0 0 0-.37-.88zm-.88 9.25H5.89v-11h2.72v2.63a1.25 1.25 0 0 0 1.25 1.25h2.75zm0-8.37H9.86V1.25l2.75 2.63z"
+            />
+            <path
+              d="M10.11 14.75H3.39v-11H4V2.5h-.61a1.25 1.25 0 0 0-1.25 1.25v11A1.25 1.25 0 0 0 3.39 16h6.72a1.25 1.25 0 0 0 1.25-1.25v-.63h-1.25z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="selection-container">
+        <div class="char-container">
+          <h3 class="text-left">Character Length</h3>
+          <h2 id="char-length">0</h2>
+        </div>
+        <input
+          type="range"
+          id="slider"
+          name="slider"
+          min="7"
+          max="30"
+          step="1"
+          value="15"
+          onchange="generatePassword()"
+        />
+        <div class="flex-container">
+          <input type="checkbox" name="lowercase" id="lowercase" onchange="generatePassword()" checked />
+          <h3 class="text-left">Include Lowercase Letters</h3>
+        </div>
+        <div class="flex-container">
+          <input type="checkbox" name="uppercase" id="uppercase" onchange="generatePassword()" checked />
+          <h3 class="text-left">Include Uppercase Letters</h3>
+        </div>
+        <div class="flex-container">
+          <input type="checkbox" name="numbers" id="numbers" onchange="generatePassword()" checked />
+          <h3 class="text-left">Include Numbers</h3>
+        </div>
+        <div class="flex-container">
+          <input type="checkbox" name="symbols" id="symbols" onchange="generatePassword()"/>
+          <h3 class="text-left">Include Symbols</h3>
+        </div>
+        <div class="strength-container">
+          <h4>Strength</h4>
+          <div id="strength">
+            <div class="strength__bar one"></div>
+            <div class="strength__bar two"></div>
+            <div class="strength__bar three"></div>
+            <div class="strength__bar four"></div>
+          </div>
+        </div>
+        <button id="generate" onclick="generatePassword()">Generate</button>
+      </div>
+    </div>
+  </body>
+</html>
