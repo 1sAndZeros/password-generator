@@ -85,7 +85,7 @@ window.copyPassword = () => {
   copyText.select();
   copyText.setSelectionRange(0, 99999);
   navigator.clipboard.writeText(copyText.value);
-  const test = document.getElementsByClassName('copied')[0];
-  test.style.visibility = 'visible';
-  setTimeout(() => (test.style.visibility = 'hidden'), 3000);
+  const copied = document.getElementsByClassName('copied')[0];
+  copied.style.display = 'block';
+  setTimeout(() => (copied.style.display = 'none'), 3000);
 };
