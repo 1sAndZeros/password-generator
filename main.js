@@ -40,19 +40,28 @@ window.generatePassword = () => {
   numbers && allowableChars.push(...numbersArray);
   symbols && allowableChars.push(...symbolsArray);
 
+  // Throw Error if all checkboxes are unticked
+  // TODO: Prevent last checkbox being unticked
   if (allowableChars.length === 0) {
     document.querySelector('#password').value = 'P4$5W0rD!';
     throw new Error("You didn't choose any characters");
     return null;
   }
-
+  
+  // Generate random password
   let password = '';
   for (let i = 0; i < slider.value; i++) {
     const randomLetter =
       allowableChars[Math.floor(Math.random() * allowableChars.length)];
     password += randomLetter;
   }
+
+  // TODO: If password doesn't contain ticked element, re-run
+  
+  // Update input value with generated password
   document.querySelector('#password').value = password;
+  
+  // Set score / strength indicator
   let score = 0;
 
   if (lowercase) score += 8;
@@ -70,6 +79,7 @@ window.generatePassword = () => {
   if (score > 45) scoreBars[3].style.backgroundColor = 'green';
 };
 
+// Copy password to clipboard
 window.copyPassword = () => {
   const copyText = document.querySelector('#password');
   copyText.select();
