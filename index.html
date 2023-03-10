@@ -38,7 +38,7 @@
       </div>
       <div class="selection-container">
         <div class="char-container">
-          <h3 class="text-left">Character Length</h3>
+          <h3>Character Length</h3>
           <h2 id="char-length">0</h2>
         </div>
         <input
@@ -51,29 +51,26 @@
           value="15"
           onchange="generatePassword()"
         />
-        <div class="flex-container">
-          <input type="checkbox" name="lowercase" id="lowercase" onchange="generatePassword()" checked />
-          <h3 class="text-left">Include Lowercase Letters</h3>
-        </div>
-        <div class="flex-container">
+        
+          <input type="checkbox" class='css-checkbox' name="lowercase" id="lowercase" onchange="generatePassword()" checked />
+          <label for="lowercase">Include Lowercase Letters</label>
+    
           <input type="checkbox" name="uppercase" id="uppercase" onchange="generatePassword()" checked />
-          <h3 class="text-left">Include Uppercase Letters</h3>
-        </div>
-        <div class="flex-container">
+          <label for="uppercase">Include Uppercase Letters</label>
+     
           <input type="checkbox" name="numbers" id="numbers" onchange="generatePassword()" checked />
-          <h3 class="text-left">Include Numbers</h3>
-        </div>
-        <div class="flex-container">
+          <label for="numbers">Include Numbers</label>
+     
           <input type="checkbox" name="symbols" id="symbols" onchange="generatePassword()"/>
-          <h3 class="text-left">Include Symbols</h3>
-        </div>
+          <label for="symbols">Include Symbols</label>
+      
         <div class="strength-container">
           <h4>Strength</h4>
           <div id="strength">
-            <div class="strength__bar one"></div>
-            <div class="strength__bar two"></div>
-            <div class="strength__bar three"></div>
-            <div class="strength__bar four"></div>
+            <div class="strength__bar"></div>
+            <div class="strength__bar"></div>
+            <div class="strength__bar"></div>
+            <div class="strength__bar"></div>
           </div>
         </div>
         <button id="generate" onclick="generatePassword()">Generate</button>
