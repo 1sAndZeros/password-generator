@@ -14,26 +14,13 @@
     <title>Password Generator</title>
   </head>
   <body>
-    <script type="module" src="/main.js"></script>
     <div id="app">
       <h1>Password Generator</h1>
       <div class="password-copy-container">
-        <input id="password" type="text" value='P4$5W0rD!'/>
-        <div id="copy" onclick="copyPassword()" tabindex="0">
+        <input id="password" type="text" value="P4$5W0rD!" />
+        <div id="copy" tabindex="0">
           <div class="copied">Copied!</div>
-          <svg
-            width="800px"
-            height="800px"
-            viewBox="0 0 16 16"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M13.49 3 10.74.37A1.22 1.22 0 0 0 9.86 0h-4a1.25 1.25 0 0 0-1.22 1.25v11a1.25 1.25 0 0 0 1.25 1.25h6.72a1.25 1.25 0 0 0 1.25-1.25V3.88a1.22 1.22 0 0 0-.37-.88zm-.88 9.25H5.89v-11h2.72v2.63a1.25 1.25 0 0 0 1.25 1.25h2.75zm0-8.37H9.86V1.25l2.75 2.63z"
-            />
-            <path
-              d="M10.11 14.75H3.39v-11H4V2.5h-.61a1.25 1.25 0 0 0-1.25 1.25v11A1.25 1.25 0 0 0 3.39 16h6.72a1.25 1.25 0 0 0 1.25-1.25v-.63h-1.25z"
-            />
-          </svg>
+          <img src="./src/copy.svg" class="copy-icon" alt="copy" />
         </div>
       </div>
       <div class="selection-container">
@@ -49,21 +36,26 @@
           max="30"
           step="1"
           value="15"
-          onchange="generatePassword()"
         />
-        
-          <input type="checkbox" class='css-checkbox' name="lowercase" id="lowercase" onchange="generatePassword()" checked />
-          <label for="lowercase">Include Lowercase Letters</label>
-    
-          <input type="checkbox" name="uppercase" id="uppercase" onchange="generatePassword()" checked />
-          <label for="uppercase">Include Uppercase Letters</label>
-     
-          <input type="checkbox" name="numbers" id="numbers" onchange="generatePassword()" checked />
-          <label for="numbers">Include Numbers</label>
-     
-          <input type="checkbox" name="symbols" id="symbols" onchange="generatePassword()"/>
-          <label for="symbols">Include Symbols</label>
-      
+
+        <input
+          type="checkbox"
+          class="css-checkbox"
+          name="lowercase"
+          id="lowercase"
+          checked
+        />
+        <label for="lowercase">Include Lowercase Letters</label>
+
+        <input type="checkbox" name="uppercase" id="uppercase" checked />
+        <label for="uppercase">Include Uppercase Letters</label>
+
+        <input type="checkbox" name="numbers" id="numbers" checked />
+        <label for="numbers">Include Numbers</label>
+
+        <input type="checkbox" name="symbols" id="symbols" />
+        <label for="symbols">Include Symbols</label>
+
         <div class="strength-container">
           <h4>Strength</h4>
           <div id="strength">
@@ -73,8 +65,9 @@
             <div class="strength__bar"></div>
           </div>
         </div>
-        <button id="generate" onclick="generatePassword()">Generate</button>
+        <button id="generate">Generate</button>
       </div>
     </div>
   </body>
+  <script type="module" src="/src/main.ts"></script>
 </html>

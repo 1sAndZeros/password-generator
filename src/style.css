@@ -118,10 +118,10 @@ label {
   font-size: var(--fs-400);
 }
 
-svg {
+.copy-icon {
   width: 30px;
   height: 30px;
-  fill: var(--clr-accent);
+  color: var(--clr-accent);
 }
 
 .password-copy-container {
